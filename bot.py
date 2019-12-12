@@ -7,7 +7,7 @@ client = commands.Bot(command_prefix="#")
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Streaming(name="Discord.py", url="https://twitch.tv/itscopex"))
+    await client.change_presence(activity=discord.Streaming(name="ItsCopex#9227", url="https://twitch.tv/itscopex"))
 
 @client.event
 async def on_member_join(member):
