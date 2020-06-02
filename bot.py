@@ -3,41 +3,11 @@ from discord.ext import commands
 from discord.utils import get
 import os
 
-client = commands.Bot(command_prefix="#")
+client = commands.Bot(command_prefix="-")
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Streaming(name="ItsCopex#9227", url="https://twitch.tv/itscopex"))
-
-@client.event
-async def on_member_join(member):
-    role = get(member.guild.roles, name="Army")
-    await member.add_roles(role)
-
-@client.command()
-async def YouTube(ctx):
-    await ctx.send(f"**YouTube: https://www.youtube.com/channel/UC4lsQ9cTpe4rkbom4E7kC5g?view_as=subscriber**")
-
-@client.event
-async def on_raw_reaction_add(self, payload): 
-channel = discord.utils.get(self.guild.text_channels, name='rules') 
-if not payload.guild_id: 
-return if payload.channel_id != channel.id:
-return	guild = self.get_guild(payload.guild_id) 
-member = guild.get_member(payload.user_id)
-if payload.emoji.id != 698647548084355154:
-role = discord.utils.get(guild.roles, name="Army") else:
-return await member.add_roles(role, reason='Reaction role')
-
-@client.event
-async def on_raw_reaction_remove(self, payload):
-channel = discord.utils.get(self.guild.text_channels, name='rules') 
-if not payload.guild_id: 
-return if payload.channel_id != channel.id: 
-return	 guild = self.get_guild(payload.guild_id) member = guild.get_member(payload.user_id) 
-if payload.emoji.id != 698647548084355154:
-role = discord.utils.get(guild.roles, name="Army") else: 
-return await member.remove_roles(role, reason='Reaction role') 
+    await client.change_presence(activity=discord.Game(name="Abonniert BeCalmFN"))
 
 @client.command()
 @commands.has_permissions(manage_messages=True)
